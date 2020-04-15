@@ -39,5 +39,41 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <!DOCTYPE html>
+	<head>
+		<title>TFT Assistant</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<script>
+	function search() {
+		var input, filter, ul, li, a, i, txtValue;
+		input = document.getElementById("searchBar");
+		filter = input.value.toUpperCase();
+		ul = document.getElementById("myUL");
+		li = ul.getElementsByTagName("li");
+		for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("a")[0];
+			txtValue = a.id;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				li[i].style.display = "";
+			} else {
+				li[i].style.display = "none";
+			}
+		}
+	}
+	</script>
+	<body>
+		<h2>Numbers 1-5</h2>
+		<input type="text" id="searchBar" onkeyup="search()" placeholder="Search for a number" title="Type in a number">
+		<ul id="myUL">
+      <li><a id="This is the number 1">This is the number 1</a></li>
+			<li><a id="This is the number 2">This is the number 2</a></li>
+			<li><a id="This is the number 3">This is the number 3</a></li>
+			<li><a id="This is the number 4">This is the number 4</a></li>
+			<li><a id="This is the number 5">This is the number 5</a></li>
+		</ul>
   </body>
 </html>
