@@ -58,8 +58,39 @@
 			}
 		}
 	}
-	</script>
+  </script>
+  <style>
+    .popup {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+
+    .popup .popuptextandimage {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+    }
+
+    .popup:hover .popuptextandimage {
+      visibility: visible;
+    }
+    </style>
 	<body>
+    <div class="popup"> HOVER ME FOR IMAGE
+      <img class="popuptextandimage" src="https://www.borndigital.com/app/uploads/2016/04/sap-2016-04-13.jpg" />
+    </div>
+    <div class="popup"> HOVER ME FOR TEXT
+      <span class="popuptextandimage">Hover text</span>
+    </div>
 		<h2>Numbers 1-5</h2>
 		<input type="text" id="searchBar" onkeyup="search()" placeholder="Search for a number" title="Type in a number">
 		<ul id="myUL">
